@@ -14,4 +14,272 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace; }
 
 h1 {
-  color: tomato; }
+  color: #ffe5e0;
+  padding: 20px;
+  font-weight: bold;
+  font-size: 1.2rem; }
+
+p {
+  color: #ffe5e0;
+  font-size: 1.2rem;
+  padding: 0 25px;
+  margin-top: 15px; }
+
+.header {
+  border-left: 4px solid #ffb9ad;
+  overflow: hidden;
+  height: 40px;
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  transition: all .4s; }
+  .header > p {
+    position: relative;
+    left: -200px;
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #ffb9ad;
+    margin: 0;
+    padding: 0;
+    animation: showHeader 1s ease-out forwards; }
+
+@keyframes showHeader {
+  to {
+    left: 7px; } }
+
+.nav {
+  cursor: pointer;
+  transition: all .4s; }
+
+.nav-320 {
+  position: fixed;
+  width: 52px;
+  height: 52px;
+  background-color: #ff8e7a;
+  z-index: 3;
+  right: 12px;
+  top: 12px;
+  border-radius: 10px; }
+  .nav-320 > span {
+    width: 32px;
+    height: 6px;
+    background-color: tomato;
+    position: absolute;
+    left: 10px;
+    top: 13px; }
+    .nav-320 > span:before, .nav-320 > span:after {
+      content: '';
+      width: 32px;
+      height: 6px;
+      background-color: tomato;
+      position: absolute;
+      left: 0;
+      top: 10px; }
+    .nav-320 > span:after {
+      top: 20px; }
+
+.nav-320:hover,
+.nav-320:active {
+  background-color: #ffb9ad; }
+  .nav-320:hover > span,
+  .nav-320:hover > span:before,
+  .nav-320:hover > span:after,
+  .nav-320:active > span,
+  .nav-320:active > span:before,
+  .nav-320:active > span:after {
+    background-color: #ff8e7a; }
+
+.ul-320 {
+  display: none; }
+
+.home-page {
+  position: relative;
+  background-image: url("./img/bg2.jpg");
+  background-size: 800px;
+  background-position: calc(50% - 30px) -405px;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .home-page > header {
+    color: #ff8e7a;
+    font-size: 2.4rem;
+    font-weight: bold;
+    letter-spacing: 3px; }
+  .home-page .btn-home-page {
+    border: 2px solid #ff8e7a;
+    margin-top: 15px;
+    width: 160px;
+    height: 40px;
+    line-height: 40px;
+    background-color: transparent;
+    color: #ff8e7a;
+    outline: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    z-index: 1;
+    transition: all .4s; }
+    .home-page .btn-home-page:hover, .home-page .btn-home-page:active {
+      background-color: #ff8e7a;
+      color: #ffe5e0; }
+
+.circle-effect {
+  width: 100%;
+  height: 150px;
+  position: absolute;
+  bottom: 0;
+  overflow: hidden; }
+  .circle-effect .wave1 {
+    position: absolute;
+    width: 300vw;
+    height: 312vw;
+    left: 51%;
+    bottom: -285vw;
+    transform: translate(-50%);
+    background-color: #ff8e7a;
+    border-radius: 50%;
+    animation: waterEffect 6s linear infinite; }
+  .circle-effect .wave2 {
+    position: absolute;
+    width: 300vw;
+    height: 310vw;
+    left: 49%;
+    bottom: -285vw;
+    transform: translate(-50%);
+    background-color: #ff7961;
+    border-radius: 50%;
+    animation: waterEffect 7s linear infinite; }
+  .circle-effect .wave3 {
+    position: absolute;
+    width: 300vw;
+    height: 308vw;
+    left: 53%;
+    bottom: -284vw;
+    transform: translate(-50%);
+    background-color: tomato;
+    border-radius: 50%;
+    animation: waterEffect 8s linear infinite; }
+
+@keyframes waterEffect {
+  from {
+    transform: translate(-50%) rotate(0deg); }
+  to {
+    transform: translate(-50%) rotate(360deg); } }
+
+.aboutme-page {
+  background-color: tomato;
+  width: 100%;
+  height: calc(100vh + 200px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; }
+
+.img-aboutme-page {
+  margin: 0 auto;
+  width: 246px;
+  height: 346px;
+  position: relative; }
+  .img-aboutme-page > span:nth-child(1) {
+    position: absolute;
+    width: 200px;
+    height: 300px;
+    left: 23px;
+    top: 23px;
+    box-shadow: 0 0 20px black;
+    background-image: url("./img/bg3.jpg");
+    background-size: 246px 346px;
+    background-position: -23px -23px;
+    background-repeat: no-repeat;
+    z-index: 1; }
+  .img-aboutme-page > span:nth-child(2) {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 150px;
+    height: 260px;
+    box-shadow: 0 0 20px black;
+    background-image: url("./img/bg3.jpg");
+    background-size: 246px 346px;
+    background-position: -96px 0;
+    background-repeat: no-repeat;
+    z-index: 1; }
+  .img-aboutme-page > span:nth-child(3) {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 60px;
+    height: 90px;
+    box-shadow: 0 0 20px black;
+    background-image: url("./img/bg3.jpg");
+    background-size: 246px 346px;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    z-index: 0; }
+  .img-aboutme-page > span:nth-child(4) {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 70px;
+    height: 80px;
+    box-shadow: 0 0 20px black;
+    background-image: url("./img/bg3.jpg");
+    background-size: 246px 346px;
+    background-position: 0 -266px;
+    background-repeat: no-repeat;
+    z-index: 1; }
+
+.gallery-page {
+  background-color: tomato;
+  width: 100%;
+  height: calc(100vh + 100px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border: 1px solid black; }
+
+.cv-page {
+  background-color: tomato;
+  width: 100%;
+  height: calc(100vh + 100px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border: 1px solid black; }
+
+.contact-page {
+  background-color: tomato;
+  width: 100%;
+  height: calc(100vh + 100px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  border: 1px solid black; }
+
+.foot {
+  width: 100vw;
+  height: 60px;
+  background-color: #262626;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+  .foot p {
+    font-size: .8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 0;
+    color: #ccc; }
+  .foot div {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center; }
+    .foot div p {
+      padding: 0;
+      margin: 3px 15px 0;
+      letter-spacing: 0; }
