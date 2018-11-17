@@ -51,15 +51,56 @@ class App extends Component {
           <section className="gallery-page">
               <header className='header'><p>Galeria</p></header>
 
+              <article className='gallery'>
+                  <div className="select-gallery"></div>
+                  <p>Galeria z serialu kryminalnego</p>
+              </article>
+              <article className='gallery'>
+                  <p>Galeria z zajec w teatrze</p>
+                  <div className="select-gallery"></div>
+              </article>
+              <article className='gallery'>
+                  <div className="select-gallery"></div>
+                  <p>Galeria z wystepu w Oplu</p>
+              </article>
+
           </section>
 
           <section className="cv-page">
               <header className='header'><p>CV</p></header>
 
+              <div className="cv">
+                  <button>Pobierz</button>
+              </div>
+
           </section>
 
           <section className="contact-page">
               <header className='header'><p>Kontakt</p></header>
+
+              <div className="contact-links">
+                  <div>
+                      <a href="https://www.facebook.com/karolina.ficht" target="_blank">
+                          <div className='svg-fb' ></div>
+                          <p>fb.com/karolina.ficht</p>
+                      </a>
+                  </div>
+                  <div>
+                      <a href="karolinaficht@wp.pl" target="_blank">
+                          <div className='svg-mail' ></div>
+                          <p>karolinaficht@wp.pl</p>
+                      </a>
+                  </div>
+              </div>
+
+              <form action=''>
+                  <label htmlFor="name">Name</label>
+                  <input type="text" id="name" placeholder="nick"/>
+                  <label htmlFor="mail">E-mail*</label>
+                  <input type="email" id="mail" placeholder="e-mail*"/>
+                  <textarea name="textarea" placeholder="Leave me a message*" defaultValue={""}/>
+                  <input type="submit" defaultValue="Wyslij"/>
+              </form>
 
           </section>
 

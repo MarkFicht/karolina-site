@@ -23,7 +23,8 @@ p {
   color: #ffe5e0;
   font-size: 1.2rem;
   padding: 0 25px;
-  margin-top: 15px; }
+  margin-top: 15px;
+  text-align: center; }
 
 .header {
   border-left: 4px solid #ffb9ad;
@@ -100,7 +101,7 @@ p {
   background-position: calc(50% - 30px) -405px;
   background-repeat: no-repeat;
   width: 100%;
-  height: 100vh;
+  height: 500px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -175,7 +176,7 @@ p {
 .aboutme-page {
   background-color: tomato;
   width: 100%;
-  height: calc(100vh + 200px);
+  height: 670px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start; }
@@ -235,31 +236,163 @@ p {
     z-index: 1; }
 
 .gallery-page {
-  background-color: tomato;
+  background-color: #ff7056;
   width: 100%;
-  height: calc(100vh + 100px);
+  height: 840px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  border: 1px solid black; }
+  justify-content: flex-start; }
+
+.gallery {
+  width: 100%;
+  height: 200px;
+  margin: 25px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .gallery .select-gallery {
+    width: 45%;
+    height: 100%;
+    background-image: url("https://via.placeholder.com/200x300");
+    background-position: center;
+    background-size: cover;
+    cursor: pointer;
+    transition: all .4s;
+    box-shadow: 0 0 10px black;
+    border-radius: 5px; }
+    .gallery .select-gallery:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px black; }
+  .gallery p {
+    width: 45%;
+    margin: 0;
+    padding: 10px; }
 
 .cv-page {
   background-color: tomato;
   width: 100%;
-  height: calc(100vh + 100px);
+  height: 500px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  border: 1px solid black; }
+  justify-content: flex-start; }
+
+.cv {
+  width: 80%;
+  height: 360px;
+  margin: 20px 10%;
+  background-color: #fefefe;
+  position: relative; }
+  .cv > button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 160px;
+    height: 80px;
+    line-height: 80px;
+    outline: none;
+    border-radius: 25px;
+    font-size: 2rem;
+    font-weight: bold;
+    border: 2px solid #ff8e7a;
+    color: #ff8e7a;
+    background-color: transparent;
+    cursor: pointer; }
 
 .contact-page {
-  background-color: tomato;
+  background-color: #ff7056;
   width: 100%;
-  height: calc(100vh + 100px);
+  height: 560px;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start; }
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+  .contact-links > div {
+    width: 80%;
+    margin-bottom: 10px; }
+    .contact-links > div > a {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      text-decoration: none; }
+      .contact-links > div > a > p {
+        margin: 0;
+        padding: 0;
+        font-weight: bold; }
+
+.svg-fb {
+  mask-image: url("./svg/fb.svg");
+  mask-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  margin-right: 15px;
+  background-color: #3b5998; }
+
+.svg-mail {
+  mask: url("./svg/mail.svg");
+  mask-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  margin-right: 15px;
+  background-color: #262626; }
+
+form {
+  display: flex;
   justify-content: flex-start;
-  border: 1px solid black; }
+  align-items: center;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 20px auto; }
+  form > label {
+    width: 25%;
+    text-align: start;
+    margin-bottom: 10px;
+    color: #ffe5e0;
+    font-weight: bold; }
+  form > input[type='text'],
+  form > input[type='email'] {
+    width: 75%;
+    height: 40px;
+    padding: 5px 10px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #262626;
+    background-color: snow;
+    border: 1px solid #ff3814;
+    border-radius: 10px; }
+  form > textarea {
+    width: 100%;
+    height: 150px;
+    padding: 10px 12px;
+    font-size: 14px;
+    margin-bottom: 25px;
+    color: #262626;
+    background-color: snow;
+    border: 1px solid #ff3814;
+    border-radius: 10px; }
+  form > input[type='submit'] {
+    width: 160px;
+    height: 50px;
+    margin: 0 auto;
+    font-size: 1.5rem;
+    border: 2px solid #ffe5e0;
+    line-height: 40px;
+    background-color: transparent;
+    color: #ffe5e0;
+    outline: none;
+    cursor: pointer;
+    font-weight: bold;
+    z-index: 1;
+    transition: all .4s; }
+    form > input[type='submit']:hover, form > input[type='submit']:active {
+      background-color: #ff8e7a;
+      color: #ff3814;
+      border: 2px solid #ff3814; }
 
 .foot {
   width: 100vw;
