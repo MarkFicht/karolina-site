@@ -30,7 +30,7 @@ p {
   border-left: 4px solid #ffb9ad;
   overflow: hidden;
   height: 40px;
-  margin: 20px;
+  margin: 25px 30px;
   display: flex;
   align-items: center;
   transition: all .4s; }
@@ -101,7 +101,7 @@ p {
   background-position: calc(50% - 30px) -405px;
   background-repeat: no-repeat;
   width: 100%;
-  height: 500px;
+  height: 100vh;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -138,30 +138,30 @@ p {
   overflow: hidden; }
   .circle-effect .wave1 {
     position: absolute;
-    width: 300vw;
-    height: 312vw;
+    width: 900px;
+    height: 950px;
     left: 51%;
-    bottom: -285vw;
+    bottom: -850px;
     transform: translate(-50%);
-    background-color: #ff8e7a;
+    background-color: #ff9784;
     border-radius: 50%;
     animation: waterEffect 6s linear infinite; }
   .circle-effect .wave2 {
     position: absolute;
-    width: 300vw;
-    height: 310vw;
+    width: 900px;
+    height: 940px;
     left: 49%;
-    bottom: -285vw;
+    bottom: -845px;
     transform: translate(-50%);
-    background-color: #ff7961;
+    background-color: #ff7d66;
     border-radius: 50%;
-    animation: waterEffect 7s linear infinite; }
+    animation: waterEffect 6s .5s linear infinite; }
   .circle-effect .wave3 {
     position: absolute;
-    width: 300vw;
-    height: 308vw;
+    width: 900px;
+    height: 930px;
     left: 53%;
-    bottom: -284vw;
+    bottom: -840px;
     transform: translate(-50%);
     background-color: tomato;
     border-radius: 50%;
@@ -176,13 +176,13 @@ p {
 .aboutme-page {
   background-color: tomato;
   width: 100%;
-  height: 670px;
+  height: 720px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start; }
 
 .img-aboutme-page {
-  margin: 0 auto;
+  margin: 20px auto;
   width: 246px;
   height: 346px;
   position: relative; }
@@ -238,7 +238,7 @@ p {
 .gallery-page {
   background-color: #ff7056;
   width: 100%;
-  height: 840px;
+  height: 855px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start; }
@@ -251,7 +251,7 @@ p {
   justify-content: center;
   align-items: center; }
   .gallery .select-gallery {
-    width: 45%;
+    width: 150px;
     height: 100%;
     background-image: url("https://via.placeholder.com/200x300");
     background-position: center;
@@ -264,22 +264,22 @@ p {
       transform: scale(1.05);
       box-shadow: 0 0 20px black; }
   .gallery p {
-    width: 45%;
+    width: 140px;
     margin: 0;
     padding: 10px; }
 
 .cv-page {
   background-color: tomato;
   width: 100%;
-  height: 500px;
+  height: 510px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start; }
 
 .cv {
-  width: 80%;
+  width: 260px;
   height: 360px;
-  margin: 20px 10%;
+  margin: 20px auto;
   background-color: #fefefe;
   position: relative; }
   .cv > button {
@@ -302,7 +302,7 @@ p {
 .contact-page {
   background-color: #ff7056;
   width: 100%;
-  height: 560px;
+  height: 565px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start; }
@@ -313,7 +313,7 @@ p {
   justify-content: center;
   align-items: center; }
   .contact-links > div {
-    width: 80%;
+    width: 250px;
     margin-bottom: 10px; }
     .contact-links > div > a {
       display: flex;
@@ -346,7 +346,7 @@ form {
   justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
-  width: 80%;
+  width: 260px;
   margin: 20px auto; }
   form > label {
     width: 25%;
