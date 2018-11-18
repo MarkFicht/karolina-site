@@ -217,6 +217,8 @@ p {
     background-position: -23px -23px;
     background-repeat: no-repeat;
     z-index: 1;
+    opacity: 0;
+    animation: tilePicture .7s .3s ease-out forwards;
   }
   & > span:nth-child(2) {
     position: absolute;
@@ -230,6 +232,8 @@ p {
     background-position: (-246px+150) 0;
     background-repeat: no-repeat;
     z-index: 1;
+    opacity: 0;
+    animation: tilePicture2 .7s .6s ease-out forwards;
   }
   & > span:nth-child(3) {
     position: absolute;
@@ -243,6 +247,8 @@ p {
     background-position: 0 0;
     background-repeat: no-repeat;
     z-index: 0;
+    opacity: 0;
+    animation: tilePicture3 .7s .9s ease-out forwards;
   }
   & > span:nth-child(4) {
     position: absolute;
@@ -256,7 +262,26 @@ p {
     background-position: 0 (-346px+80);
     background-repeat: no-repeat;
     z-index: 1;
+    opacity: 0;
+    animation: tilePicture4 .7s 1.2s ease-out forwards;
   }
+}
+
+@keyframes tilePicture {
+  from { left: -120px; top: 120px; transform: rotate(60deg); opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes tilePicture2 {
+  from { right: -120px; top: 120px; transform: rotate(-75deg); opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes tilePicture3 {
+  from { left: 120px; top: 120px; transform: rotate(60deg); opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes tilePicture4 {
+  from { left: 120px; bottom: 120px; transform: rotate(75deg); opacity: 0; }
+  to { opacity: 1; }
 }
 
 //---
@@ -287,6 +312,9 @@ p {
     transition: all .4s;
     box-shadow: 0 0 10px black;
     border-radius: 5px;
+    animation: turningPic 1s ease-out forwards;
+    perspective: 10px;
+    backface-visibility: hidden;
 
     &:hover {
       transform: scale(1.05);
@@ -299,6 +327,10 @@ p {
     margin: 0;
     padding: 10px;
   }
+}
+
+@keyframes turningPic {
+  from { transform: rotateY(180deg) }
 }
 
 //---
@@ -334,10 +366,14 @@ p {
     color: lighten($baseColor, 10%);
     background-color: transparent;
     cursor: pointer;
+    transition: all .4s;
 
     &:hover,
-    &:active {
-
+    &:active,
+    &:focus {
+      background-color: lighten($baseColor, 30%);
+      transform: translate(-50%, -50%) scale(1.07);
+      box-shadow: 0 0 5px black;
     }
   }
 }
@@ -420,6 +456,12 @@ form {
     background-color: lighten($baseColor, 35%);
     border: 1px solid darken($baseColor, 10%);
     border-radius: 10px;
+    outline: none;
+
+    &:hover, &:active, &:focus {
+      box-shadow: 0 0 5px black;
+      border: 1px solid orange;
+    }
   }
   & > textarea {
     width: 100%;
@@ -431,6 +473,12 @@ form {
     background-color: lighten($baseColor, 35%);
     border: 1px solid darken($baseColor, 10%);
     border-radius: 10px;
+    outline: none;
+
+    &:hover, &:active, &:focus {
+      box-shadow: 0 0 5px black;
+      border: 1px solid orange;
+    }
   }
   & > input[type='submit'] {
     width: 160px;

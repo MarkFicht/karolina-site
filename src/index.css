@@ -197,7 +197,9 @@ p {
     background-size: 246px 346px;
     background-position: -23px -23px;
     background-repeat: no-repeat;
-    z-index: 1; }
+    z-index: 1;
+    opacity: 0;
+    animation: tilePicture .7s .3s ease-out forwards; }
   .img-aboutme-page > span:nth-child(2) {
     position: absolute;
     right: 0;
@@ -209,7 +211,9 @@ p {
     background-size: 246px 346px;
     background-position: -96px 0;
     background-repeat: no-repeat;
-    z-index: 1; }
+    z-index: 1;
+    opacity: 0;
+    animation: tilePicture2 .7s .6s ease-out forwards; }
   .img-aboutme-page > span:nth-child(3) {
     position: absolute;
     left: 0;
@@ -221,7 +225,9 @@ p {
     background-size: 246px 346px;
     background-position: 0 0;
     background-repeat: no-repeat;
-    z-index: 0; }
+    z-index: 0;
+    opacity: 0;
+    animation: tilePicture3 .7s .9s ease-out forwards; }
   .img-aboutme-page > span:nth-child(4) {
     position: absolute;
     left: 0;
@@ -233,7 +239,45 @@ p {
     background-size: 246px 346px;
     background-position: 0 -266px;
     background-repeat: no-repeat;
-    z-index: 1; }
+    z-index: 1;
+    opacity: 0;
+    animation: tilePicture4 .7s 1.2s ease-out forwards; }
+
+@keyframes tilePicture {
+  from {
+    left: -120px;
+    top: 120px;
+    transform: rotate(60deg);
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@keyframes tilePicture2 {
+  from {
+    right: -120px;
+    top: 120px;
+    transform: rotate(-75deg);
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@keyframes tilePicture3 {
+  from {
+    left: 120px;
+    top: 120px;
+    transform: rotate(60deg);
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@keyframes tilePicture4 {
+  from {
+    left: 120px;
+    bottom: 120px;
+    transform: rotate(75deg);
+    opacity: 0; }
+  to {
+    opacity: 1; } }
 
 .gallery-page {
   background-color: #ff7056;
@@ -259,7 +303,10 @@ p {
     cursor: pointer;
     transition: all .4s;
     box-shadow: 0 0 10px black;
-    border-radius: 5px; }
+    border-radius: 5px;
+    animation: turningPic 1s ease-out forwards;
+    perspective: 10px;
+    backface-visibility: hidden; }
     .gallery .select-gallery:hover {
       transform: scale(1.05);
       box-shadow: 0 0 20px black; }
@@ -267,6 +314,10 @@ p {
     width: 140px;
     margin: 0;
     padding: 10px; }
+
+@keyframes turningPic {
+  from {
+    transform: rotateY(180deg); } }
 
 .cv-page {
   background-color: tomato;
@@ -297,7 +348,12 @@ p {
     border: 2px solid #ff8e7a;
     color: #ff8e7a;
     background-color: transparent;
-    cursor: pointer; }
+    cursor: pointer;
+    transition: all .4s; }
+    .cv > button:hover, .cv > button:active, .cv > button:focus {
+      background-color: #ffe5e0;
+      transform: translate(-50%, -50%) scale(1.07);
+      box-shadow: 0 0 5px black; }
 
 .contact-page {
   background-color: #ff7056;
@@ -364,7 +420,14 @@ form {
     color: #262626;
     background-color: snow;
     border: 1px solid #ff3814;
-    border-radius: 10px; }
+    border-radius: 10px;
+    outline: none; }
+    form > input[type='text']:hover, form > input[type='text']:active, form > input[type='text']:focus,
+    form > input[type='email']:hover,
+    form > input[type='email']:active,
+    form > input[type='email']:focus {
+      box-shadow: 0 0 5px black;
+      border: 1px solid orange; }
   form > textarea {
     width: 100%;
     height: 150px;
@@ -374,7 +437,11 @@ form {
     color: #262626;
     background-color: snow;
     border: 1px solid #ff3814;
-    border-radius: 10px; }
+    border-radius: 10px;
+    outline: none; }
+    form > textarea:hover, form > textarea:active, form > textarea:focus {
+      box-shadow: 0 0 5px black;
+      border: 1px solid orange; }
   form > input[type='submit'] {
     width: 160px;
     height: 50px;
