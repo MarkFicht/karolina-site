@@ -349,6 +349,7 @@ p {
   margin: 20px auto;
   background-color: #fefefe;
   position: relative;
+  animation: showCvOrContacts .7s ease-out forwards;
 
   & > button {
     position: absolute;
@@ -378,6 +379,11 @@ p {
   }
 }
 
+@keyframes showCvOrContacts {
+  from { transform: scale(0) }
+  70% { transform: scale(1.05) }
+}
+
 //---
 .contact-page {
   background-color: lighten($baseColor, 3%);
@@ -393,6 +399,7 @@ p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  animation: showCvOrContacts .7s ease-out forwards;
 
   & > div {
     width: 250px;
@@ -437,6 +444,7 @@ form {
   flex-wrap: wrap;
   width: 260px;
   margin: 20px auto;
+  animation: showCvOrContacts .7s ease-in forwards;
 
   & > label {
     width: 25%;

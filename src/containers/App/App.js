@@ -22,6 +22,7 @@ class HomePage extends Component {
         return (
             <section className="home-page">
                 <header>Witaj!</header>
+
                 <h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt, nihil nostrum officiis quae tempore
                     ullam.</h1>
                 <button className='btn-home-page'>ZACZNIJ TU</button>
@@ -38,97 +39,140 @@ class HomePage extends Component {
 class AboutMePage extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            show: false,
-        }
+        this.position = null;
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        this.position = document.querySelector('.aboutme-page').offsetTop;
     }
 
     render() {
         return (
             <section className='aboutme-page'>
-                <header className='header'><p>O mnie</p></header>
-                <div className="img-aboutme-page">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad at, beatae commodi corporis culpa deserunt.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad at, beatae commodi corporis culpa deserunt.</p>
+                { this.props.currentY > this.position/3 &&
+                <>
+                    <header className='header'><p>O mnie</p></header>
+
+                    <div className="img-aboutme-page">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad at, beatae commodi corporis culpa deserunt.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad at, beatae commodi corporis culpa deserunt.</p>
+                </>
+                }
             </section>
         );
     }
 }
 
 class GalleryPage extends Component {
+    constructor(props) {
+        super(props);
+        this.position = null;
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        this.position = document.querySelector('.gallery-page').offsetTop;
+    }
+
     render() {
         return (
             <section className="gallery-page">
-                <header className='header'><p>Galeria</p></header>
+                { this.props.currentY > this.position/1.5 &&
+                <>
+                    <header className='header'><p>Galeria</p></header>
 
-                <article className='gallery'>
-                    <div className="select-gallery"></div>
-                    <p>Galeria z serialu kryminalnego</p>
-                </article>
-                <article className='gallery'>
-                    <p>Galeria z zajec w teatrze</p>
-                    <div className="select-gallery"></div>
-                </article>
-                <article className='gallery'>
-                    <div className="select-gallery"></div>
-                    <p>Galeria z wystepu w Oplu</p>
-                </article>
-
+                    <article className='gallery'>
+                        <div className="select-gallery"></div>
+                        <p>Galeria z serialu kryminalnego</p>
+                    </article>
+                    <article className='gallery'>
+                        <p>Galeria z zajec w teatrze</p>
+                        <div className="select-gallery"></div>
+                    </article>
+                    <article className='gallery'>
+                        <div className="select-gallery"></div>
+                        <p>Galeria z wystepu w Oplu</p>
+                    </article>
+                </>
+                }
             </section>
         );
     }
 }
 
 class CVPage extends Component {
+    constructor(props) {
+        super(props);
+        this.position = null;
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        this.position = document.querySelector('.cv-page').offsetTop;
+    }
+
     render() {
         return (
             <section className="cv-page">
-                <header className='header'><p>CV</p></header>
+                { this.props.currentY > this.position/1.2 &&
+                <>
+                    <header className='header'><p>CV</p></header>
 
-                <div className="cv">
-                    <button>Pobierz</button>
-                </div>
-
+                    <div className="cv">
+                        <button>Pobierz</button>
+                    </div>
+                </>
+                }
             </section>
         );
     }
 }
 
 class ContactPage extends Component {
+    constructor(props) {
+        super(props);
+        this.position = null;
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        this.position = document.querySelector('.contact-page').offsetTop;
+    }
+
     render() {
         return (
             <section className="contact-page">
-                <header className='header'><p>Kontakt</p></header>
+                { this.props.currentY > this.position/1.2 &&
+                <>
+                    <header className='header'><p>Kontakt</p></header>
 
-                <div className="contact-links">
-                    <div>
-                        <a href="https://www.facebook.com/karolina.ficht" target="_blank">
-                            <div className='svg-fb' ></div>
-                            <p>fb.com/karolina.ficht</p>
-                        </a>
+                    <div className="contact-links">
+                        <div>
+                            <a href="https://www.facebook.com/karolina.ficht" target="_blank">
+                                <div className='svg-fb' ></div>
+                                <p>fb.com/karolina.ficht</p>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="karolinaficht@wp.pl" target="_blank">
+                                <div className='svg-mail' ></div>
+                                <p>karolinaficht@wp.pl</p>
+                            </a>
+                        </div>
                     </div>
-                    <div>
-                        <a href="karolinaficht@wp.pl" target="_blank">
-                            <div className='svg-mail' ></div>
-                            <p>karolinaficht@wp.pl</p>
-                        </a>
-                    </div>
-                </div>
 
-                <form action=''>
-                    <label htmlFor="name">Name</label>
-                    <input type="text" id="name" placeholder="nick"/>
-                    <label htmlFor="mail">E-mail*</label>
-                    <input type="email" id="mail" placeholder="e-mail*"/>
-                    <textarea name="textarea" placeholder="Leave me a message*" defaultValue={""}/>
-                    <input type="submit" defaultValue="Wyslij"/>
-                </form>
-
+                    <form action=''>
+                        <label htmlFor="name">Name</label>
+                        <input type="text" id="name" placeholder="nick"/>
+                        <label htmlFor="mail">E-mail*</label>
+                        <input type="email" id="mail" placeholder="e-mail*"/>
+                        <textarea name="textarea" placeholder="Leave me a message*" defaultValue={""}/>
+                        <input type="submit" defaultValue="Wyslij"/>
+                    </form>
+                </>
+                }
             </section>
         );
     }
@@ -151,9 +195,7 @@ class Footer extends Component {
 class App extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            currentScrollY: 0,
-        }
+        this.currentY = null;
     }
 
     componentDidMount() {
@@ -165,11 +207,13 @@ class App extends Component {
     }
 
     handleScroll = (showInScrollY) => {
-        let pageY = window.scrollY;
-        console.log(pageY)
+        this.currentY = window.scrollY;
 
+        // Need induce setState for working displaying sections on variable in constructor :)
+        this.setState({})
     }
 
+    /** MAIN RENDER */
     render() {
     return (
         <div className="App">
@@ -179,13 +223,13 @@ class App extends Component {
             <main>
                 <HomePage />
 
-                <AboutMePage />
+                <AboutMePage currentY={this.currentY} />
 
-                <GalleryPage />
+                <GalleryPage currentY={this.currentY} />
 
-                <CVPage />
+                <CVPage currentY={this.currentY} />
 
-                <ContactPage />
+                <ContactPage currentY={this.currentY} />
             </main>
 
             <Footer />
