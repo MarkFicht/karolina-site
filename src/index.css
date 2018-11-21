@@ -2,6 +2,8 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0; }
+  *:after, *:before {
+    box-sizing: border-box; }
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
@@ -145,7 +147,7 @@ p {
     transform: translate(-50%);
     background-color: #ff9784;
     border-radius: 50%;
-    animation: waterEffect 6s linear infinite; }
+    animation: waterEffect 4s linear infinite; }
   .circle-effect .wave2 {
     position: absolute;
     width: 900px;
@@ -155,7 +157,7 @@ p {
     transform: translate(-50%);
     background-color: #ff7d66;
     border-radius: 50%;
-    animation: waterEffect 6s .5s linear infinite; }
+    animation: waterEffect 4s .3s linear infinite; }
   .circle-effect .wave3 {
     position: absolute;
     width: 900px;
@@ -165,7 +167,7 @@ p {
     transform: translate(-50%);
     background-color: tomato;
     border-radius: 50%;
-    animation: waterEffect 8s linear infinite; }
+    animation: waterEffect 5s linear infinite; }
 
 @keyframes waterEffect {
   from {
@@ -179,7 +181,8 @@ p {
   height: 720px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; }
+  justify-content: flex-start;
+  overflow: hidden; }
 
 .img-aboutme-page {
   margin: 20px auto;
@@ -187,6 +190,20 @@ p {
   height: 346px;
   position: relative; }
   .img-aboutme-page > span:nth-child(1) {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 150px;
+    height: 260px;
+    box-shadow: 0 0 30px black;
+    background-image: url("./img/bg3.jpg");
+    background-size: 246px 346px;
+    background-position: -96px 0;
+    background-repeat: no-repeat;
+    z-index: 2;
+    opacity: 0;
+    animation: tilePicture 1.2s ease-out forwards; }
+  .img-aboutme-page > span:nth-child(2) {
     position: absolute;
     width: 200px;
     height: 300px;
@@ -199,51 +216,46 @@ p {
     background-repeat: no-repeat;
     z-index: 1;
     opacity: 0;
-    animation: tilePicture .7s .3s ease-out forwards; }
-  .img-aboutme-page > span:nth-child(2) {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 150px;
-    height: 260px;
-    box-shadow: 0 0 20px black;
-    background-image: url("./img/bg3.jpg");
-    background-size: 246px 346px;
-    background-position: -96px 0;
-    background-repeat: no-repeat;
-    z-index: 1;
-    opacity: 0;
-    animation: tilePicture2 .7s .6s ease-out forwards; }
+    animation: tilePicture2 1.2s ease-out forwards; }
   .img-aboutme-page > span:nth-child(3) {
     position: absolute;
     left: 0;
     top: 0;
     width: 60px;
     height: 90px;
-    box-shadow: 0 0 20px black;
+    box-shadow: 0 0 15px black;
     background-image: url("./img/bg3.jpg");
     background-size: 246px 346px;
     background-position: 0 0;
     background-repeat: no-repeat;
     z-index: 0;
     opacity: 0;
-    animation: tilePicture3 .7s .9s ease-out forwards; }
+    animation: tilePicture3 1.2s ease-out forwards; }
   .img-aboutme-page > span:nth-child(4) {
     position: absolute;
     left: 0;
     bottom: 0;
     width: 70px;
     height: 80px;
-    box-shadow: 0 0 20px black;
+    box-shadow: 0 0 30px black;
     background-image: url("./img/bg3.jpg");
     background-size: 246px 346px;
     background-position: 0 -266px;
     background-repeat: no-repeat;
     z-index: 1;
     opacity: 0;
-    animation: tilePicture4 .7s 1.2s ease-out forwards; }
+    animation: tilePicture4 1.2s ease-out forwards; }
 
 @keyframes tilePicture {
+  from {
+    right: -120px;
+    top: -120px;
+    transform: rotate(75deg);
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@keyframes tilePicture2 {
   from {
     left: -120px;
     top: 120px;
@@ -252,20 +264,11 @@ p {
   to {
     opacity: 1; } }
 
-@keyframes tilePicture2 {
-  from {
-    right: -120px;
-    top: 120px;
-    transform: rotate(-75deg);
-    opacity: 0; }
-  to {
-    opacity: 1; } }
-
 @keyframes tilePicture3 {
   from {
-    left: 120px;
-    top: 120px;
-    transform: rotate(60deg);
+    left: -120px;
+    top: -60px;
+    transform: rotate(-60deg);
     opacity: 0; }
   to {
     opacity: 1; } }
@@ -273,7 +276,7 @@ p {
 @keyframes tilePicture4 {
   from {
     left: 120px;
-    bottom: 120px;
+    bottom: -60px;
     transform: rotate(75deg);
     opacity: 0; }
   to {
@@ -285,7 +288,8 @@ p {
   height: 855px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; }
+  justify-content: flex-start;
+  overflow: hidden; }
 
 .gallery {
   width: 100%;
@@ -297,7 +301,7 @@ p {
   .gallery .select-gallery {
     width: 150px;
     height: 100%;
-    background-image: url("https://via.placeholder.com/200x300");
+    background-image: url("http://placekitten.com/200/300");
     background-position: center;
     background-size: cover;
     cursor: pointer;
@@ -325,7 +329,8 @@ p {
   height: 510px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; }
+  justify-content: flex-start;
+  overflow: hidden; }
 
 .cv {
   width: 260px;
@@ -368,7 +373,8 @@ p {
   height: 565px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; }
+  justify-content: flex-start;
+  overflow: hidden; }
 
 .contact-links {
   display: flex;

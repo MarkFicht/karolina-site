@@ -157,7 +157,7 @@ p {
     transform: translate(-50%);
     background-color: lighten($baseColor, 12%);
     border-radius: 50%;
-    animation: waterEffect 6s linear infinite;
+    animation: waterEffect 4s linear infinite;
   }
   .wave2 {
     position: absolute;
@@ -168,7 +168,7 @@ p {
     transform: translate(-50%);
     background-color: lighten($baseColor, 6%);
     border-radius: 50%;
-    animation: waterEffect 6s .5s linear infinite;
+    animation: waterEffect 4s .3s linear infinite;
   }
   .wave3 {
     position: absolute;
@@ -179,7 +179,7 @@ p {
     transform: translate(-50%);
     background-color: $baseColor;
     border-radius: 50%;
-    animation: waterEffect 8s linear infinite;
+    animation: waterEffect 5s linear infinite;
   }
 }
 
@@ -196,7 +196,10 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  overflow: hidden;
 }
+
+$durationTile: 1.2s;
 
 .img-aboutme-page {
   margin: 20px auto;
@@ -206,6 +209,21 @@ p {
 
 
   & > span:nth-child(1) {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 150px;
+    height: 260px;
+    box-shadow: 0 0 30px black;
+    background-image: url("./img/bg3.jpg");
+    background-size: 246px 346px;
+    background-position: (-246px+150) 0;
+    background-repeat: no-repeat;
+    z-index: 2;
+    opacity: 0;
+    animation: tilePicture $durationTile ease-out forwards;
+  }
+  & > span:nth-child(2) {
     position: absolute;
     width: 200px;
     height: 300px;
@@ -218,22 +236,7 @@ p {
     background-repeat: no-repeat;
     z-index: 1;
     opacity: 0;
-    animation: tilePicture .7s .3s ease-out forwards;
-  }
-  & > span:nth-child(2) {
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 150px;
-    height: 260px;
-    box-shadow: 0 0 20px black;
-    background-image: url("./img/bg3.jpg");
-    background-size: 246px 346px;
-    background-position: (-246px+150) 0;
-    background-repeat: no-repeat;
-    z-index: 1;
-    opacity: 0;
-    animation: tilePicture2 .7s .6s ease-out forwards;
+    animation: tilePicture2 $durationTile ease-out forwards;
   }
   & > span:nth-child(3) {
     position: absolute;
@@ -241,14 +244,14 @@ p {
     top: 0;
     width: 60px;
     height: 90px;
-    box-shadow: 0 0 20px black;
+    box-shadow: 0 0 15px black;
     background-image: url("./img/bg3.jpg");
     background-size: 246px 346px;
     background-position: 0 0;
     background-repeat: no-repeat;
     z-index: 0;
     opacity: 0;
-    animation: tilePicture3 .7s .9s ease-out forwards;
+    animation: tilePicture3 $durationTile ease-out forwards;
   }
   & > span:nth-child(4) {
     position: absolute;
@@ -256,31 +259,31 @@ p {
     bottom: 0;
     width: 70px;
     height: 80px;
-    box-shadow: 0 0 20px black;
+    box-shadow: 0 0 30px black;
     background-image: url("./img/bg3.jpg");
     background-size: 246px 346px;
     background-position: 0 (-346px+80);
     background-repeat: no-repeat;
     z-index: 1;
     opacity: 0;
-    animation: tilePicture4 .7s 1.2s ease-out forwards;
+    animation: tilePicture4 $durationTile ease-out forwards;
   }
 }
 
 @keyframes tilePicture {
-  from { left: -120px; top: 120px; transform: rotate(60deg); opacity: 0; }
+  from { right: -120px; top: -120px; transform: rotate(75deg); opacity: 0; }
   to { opacity: 1; }
 }
 @keyframes tilePicture2 {
-  from { right: -120px; top: 120px; transform: rotate(-75deg); opacity: 0; }
+  from { left: -120px; top: 120px; transform: rotate(60deg); opacity: 0; }
   to { opacity: 1; }
 }
 @keyframes tilePicture3 {
-  from { left: 120px; top: 120px; transform: rotate(60deg); opacity: 0; }
+  from { left: -120px; top: -60px; transform: rotate(-60deg); opacity: 0; }
   to { opacity: 1; }
 }
 @keyframes tilePicture4 {
-  from { left: 120px; bottom: 120px; transform: rotate(75deg); opacity: 0; }
+  from { left: 120px; bottom: -60px; transform: rotate(75deg); opacity: 0; }
   to { opacity: 1; }
 }
 
@@ -292,6 +295,7 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  overflow: hidden;
 }
 
 .gallery {
@@ -305,7 +309,7 @@ p {
   .select-gallery {
     width: 150px;
     height: 100%;
-    background-image: url("https://via.placeholder.com/200x300");
+    background-image: url("http://placekitten.com/200/300");
     background-position: center;
     background-size: cover;
     cursor: pointer;
@@ -341,6 +345,7 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  overflow: hidden;
 }
 
 .cv {
@@ -392,6 +397,7 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  overflow: hidden;
 }
 
 .contact-links {

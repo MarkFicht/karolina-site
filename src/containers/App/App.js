@@ -195,7 +195,9 @@ class Footer extends Component {
 class App extends Component {
     constructor(props) {
         super(props);
-        this.currentY = null;
+        this.state = {
+            currentY: null
+        }
     }
 
     componentDidMount() {
@@ -206,11 +208,10 @@ class App extends Component {
         window.removeEventListener(this.handleScroll);
     }
 
-    handleScroll = (showInScrollY) => {
-        this.currentY = window.scrollY;
-
-        // Need induce setState for working displaying sections on variable in constructor :)
-        this.setState({})
+    handleScroll = () => {
+        this.setState({
+            currentY: window.scrollY
+        })
     }
 
     /** MAIN RENDER */
@@ -223,13 +224,13 @@ class App extends Component {
             <main>
                 <HomePage />
 
-                <AboutMePage currentY={this.currentY} />
+                <AboutMePage currentY={this.state.currentY} />
 
-                <GalleryPage currentY={this.currentY} />
+                <GalleryPage currentY={this.state.currentY} />
 
-                <CVPage currentY={this.currentY} />
+                <CVPage currentY={this.state.currentY} />
 
-                <ContactPage currentY={this.currentY} />
+                <ContactPage currentY={this.state.currentY} />
             </main>
 
             <Footer />
